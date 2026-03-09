@@ -1,23 +1,84 @@
 * {
     font-family: 'Roboto', sans-serif;
-    background-color: gray;
+    font-weight: 400;
 }
 
-#container-title {
+body {
     display: flex;
-    border: 1rem;
-    border-radius: 1rem;
-    background-color: lightcyan;
-    align-content: center;
-    color: blueviolet;
-    height: 5rem;
-    width: 50rem;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+    background-color: rgb(223, 224, 215);
 }
 
-#title-calc {
-    font-weight: 200;
-    font-size: 2rem;
-    background-color: lightcyan;
-    text-align: center;
-    
+input {
+    height: 2rem;
+    width: 30rem;
 }
+
+.calc-body {
+    background-color: rgb(65, 65, 65);
+    padding: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    width: 32rem;
+}
+
+.display {
+    background-color: #FFFF;
+    color: #000000;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    min-height: 4rem;
+    min-width: 10rem;
+    text-align: left;
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+}
+
+#buttons-end {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.bt-func {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333131;
+    background-color: rgb(198, 219, 119);
+}
+
+.bt-func-two {
+    border: none;
+    border-radius: 2rem;
+    padding: 1.1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000000;
+    background-color: rgb(255, 234, 234);
+    font-weight: 200;
+    width: 100%;    
+}
+
+.bt-number {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: rgb(145, 142, 144);
+    cursor: pointer;
+}
+
