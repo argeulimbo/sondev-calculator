@@ -1,0 +1,23 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    background-color: gray;
+}
+
+#container-title {
+    display: flex;
+    border: 1rem;
+    border-radius: 1rem;
+    background-color: lightcyan;
+    align-content: center;
+    color: blueviolet;
+    height: 5rem;
+    width: 50rem;
+}
+
+#title-calc {
+    font-weight: 200;
+    font-size: 2rem;
+    background-color: lightcyan;
+    text-align: center;
+    
+}
