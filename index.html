@@ -6,35 +6,35 @@
     <meta charset="UTF-8">
     <title>Sublime Calc</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="calc-body">
-        <div>
-            <input class="display" type="text">
+        <div id="display" class="display">
+        <!--<input id="display" class="display" type="text">-->
         </div>
         <div class="buttons">
-            <button class="bt-func" type="button"     >C</button>
-            <button class="bt-func" type="button"     >/</button>
-            <button class="bt-func" type="button"     >*</button>    
-            <button class="bt-func" type="button"     >-</button>
-            <button class="bt-number" type="button"   >7</button>
-            <button class="bt-number" type="button"   >8</button>
-            <button class="bt-number" type="button"   >9</button>
-            <button class="bt-func" type="button"     >+</button>            
-            <button class="bt-number" type="button"   >4</button>
-            <button class="bt-number" type="button"   >5</button>
-            <button class="bt-number" type="button"   >6</button>
-            <button class="bt-func" type="button"     >.</button>
-            <button class="bt-number" type="button"   >1</button>
-            <button class="bt-number" type="button"   >2</button>
-            <button class="bt-number" type="button"   >3</button>
-            <button class="bt-number" type="button"   >0</button>
+            <button class="bt-func"   type="button">C</button>
+            <button class="bt-func"   type="button"   onclick="operadorDigitado('/')" >/</button>
+            <button class="bt-func"   type="button"   onclick="operadorDigitado('*')" >*</button>    
+            <button class="bt-func"   type="button"   onclick="operadorDigitado('-')" >-</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('7')"   >7</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('8')"   >8</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('9')"   >9</button>
+            <button class="bt-func"   type="button"   onclick="operadorDigitado('+')" >+</button>            
+            <button class="bt-number" type="button"   onclick="numeroDigitado('4')"   >4</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('5')"   >5</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('6')"   >6</button>
+            <button class="bt-func"   type="button"   onclick="operadorDigitado('.')" >.</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('1')"   >1</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('2')"   >2</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('3')"   >3</button>
+            <button class="bt-number" type="button"   onclick="numeroDigitado('0')"   >0</button>
         </div>
         <div id="buttons-end">                
             <button class="bt-func-two" type="button">Del</button>
             <button class="bt-func-two" type="button">=</button>
         </div>
     </div>
-
 </body>
 </html>
