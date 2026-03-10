@@ -22,7 +22,7 @@ function operadorDigitado(operador) {
     display.value += operador;
 }
 
-function calcular() {
+/* function calcular() {
     let expressao = display.value;
     let numeros = expressao.split(/[\+\-\*\/]/);
     let operadores = expressao.split(/[0-9]+/).filter(op => op != "");
@@ -31,6 +31,7 @@ function calcular() {
 
     for (let i=0; i < operadores.length; i++) {
         let numero = parseFloat(numeros[i + 1]);
+
         // Adição
         if (operadores[i] == '+') {
             resultado += numero;
@@ -52,6 +53,24 @@ function calcular() {
         }
     }
     display.value = resultado;
+}
+*/
+
+function calcular() {
+    let expressao = display.value;
+    let numeros = expressao.split(/[\+\-\*\/]/);
+    let operadores = expressao.split(/[0-9]+/).filter(op => op != '');
+
+    let resultado = parseFloat(numeros[0]);
+
+    for (let i=0; i<operadores.length; i++) {
+        if (operadores[i] == '*' || operadores[i] == '/') {
+            if (operadores[i] == '*') {
+                resultado *= numero;
+            }
+            if (o)
+        }
+    }
 }
 
 function apagar() {
