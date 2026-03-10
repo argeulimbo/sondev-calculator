@@ -65,6 +65,10 @@ function calcular() {
         if (operadores[i] == '*' || operadores[i] == '/') {
             let resultado; 
             if (operadores[i] == '*') {
+                if (numeros[i + 1] == 0) {
+                    display.value = 0;   // Instanciar manualmente o resultado de X * 0 = 0
+                    return;
+                }
                 resultado = numeros[i] * numeros[i + i];
             }
             if (operadores[i] == '/') {
