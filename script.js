@@ -29,7 +29,7 @@ function operadorDigitado(operador) {
 
 function calcular() {
     let expressao = display.value;
-    let numeros = expressao.split(/[\+\-\*\/]/).map(Number);
+    let numeros = expressao.split(/[\+\-\*\/]/).map(Number); 
     let operadores = expressao.split(/[0-9]+/).filter(op => op != "");
 
     for (let i=0; i < operadores.length; i++) {
