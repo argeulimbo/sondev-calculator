@@ -1,10 +1,7 @@
 let display = document.getElementById('display');
-let numeroAtual = display.value;
-let numeroAnterior;
-let operadorAtual = '';
 
 function limpar() {
-    document.getElementById('display').value = '';
+    display.value = '';
 }
 
 function numeroDigitado(numero) {
@@ -12,63 +9,52 @@ function numeroDigitado(numero) {
 }
 
 function operadorDigitado(operador) {
-    numeroAtual = display.value;
-    if (numeroAtual == '') {
+    var currentDisplay = display.value;
+    if (currentDisplay == '') {
         return;
     }
-    var ultimo = numeroAtual.charAt(numeroAtual.length - 1);
-    if (ultimo == "+" || ultimo == "-" || ultimo == "*" || ultimo == "/") {
+    let last = currentDisplay[currentDisplay.length - 1];    
+
+    // Trava pra repetição de operadores
+    if (last == '+' || last == '-' || last == '*' || last == '/' || last == '.') {
         return;
     }
-
-    if (operadorAtual != '') {
-        calcular();
-    }
-
-    numeroAnterior = Number(numeroAtual);
-    operadorAtual = operador;
-
-    display.value = numeroAtual + operador;
-}
-
-function deletar() {
-    numeroAtual = display.value;
-    display.value = numeroAtual.substring(0, numeroAtual.length - 1);
+    display.value += operador;
 }
 
 function calcular() {
-    var expressao = display.value;
-    var partes = expressao.split(operadorAtual);
+    let expressao = display.value;
+    let numeros = expressao.split(/[\+\-\*\/]/);
+    let operadores = expressao.split(/[0-9]+/).filter(op => op != "");
 
-    if (expressao == '') {
-        limpar();
+    let resultado = parseFloat(numeros[0]);
+
+    for (let i=0; i < operadores.length; i++) {
+        let numero = parseFloat(numeros[i + 1]);
+        // Adição
+        if (operadores[i] == '+') {
+            resultado += numero;
+        }
+
+        // Subtração
+        if (operadores[i] == '-') {
+            resultado -= numero;
+        }
+
+        // Multiplicação
+        if (operadores[i] == '*') {
+            resultado *= numero;
+        }
+
+        // Divisão
+        if (operadores[i] == '/') {
+            resultado /= numero;
+        }
     }
-
-    numeroAnterior = Number(partes[0]);
-    numeroAtual = Number(partes[1]);
-
-    let resultado;
-
-    switch (operadorAtual) {
-        case '+':
-            resultado = numeroAnterior + numeroAtual;
-            break;
-        
-        case '-':
-            resultado = numeroAnterior - numeroAtual;
-            break;
-        
-        case '*':
-            resultado = numeroAnterior * numeroAtual;
-            break;
-        case '/':
-            resultado = numeroAnterior / numeroAtual;
-            break;
-        
-        default:
-            return;
-    }
-
     display.value = resultado;
-    numeroAnterior = resultado;
+}
+
+function apagar() {
+    let currentDisplay = display.value;
+    display.value = currentDisplay.substring(0, currentDisplay.length -1);
 }
