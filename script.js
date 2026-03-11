@@ -21,7 +21,7 @@ function operadorDigitado(operador) {
     let last = currentDisplay[currentDisplay.length - 1];    
 
     // Trava pra repetição de operadores
-    if (last == '+' || last == '-' || last == '*' || last == '/' || last == '.') {
+    if (last == '+' || last == '-' || last == '*' || last == '/' || last == '.' || last == '.') {
         return;
     }
     display.value += operador;
